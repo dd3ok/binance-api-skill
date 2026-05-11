@@ -1,4 +1,4 @@
 interface:
-  display_name: "Binance API Skill"
-  short_description: "Build with Binance REST APIs safely"
-  default_prompt: "Use $binance-api-skill to implement a Binance API call with official docs."
+  display_name: "Binance Spot REST Skill"
+  short_description: "Build Binance Spot REST calls safely"
+  default_prompt: "Use $binance-api-skill to implement a Binance Spot REST /api call with official docs."

@@ -22,6 +22,8 @@ git clone https://github.com/dd3ok/binance-api-skill.git \
 
 Restart Codex after installing so the skill can be discovered.
 
+This repository root is intentionally the installable Codex skill package. Runtime skill files are `SKILL.md`, `agents/openai.yaml`, `references/`, and `scripts/`; `README.md` and `LICENSE` are repository-facing files for public GitHub distribution.
+
 ## Usage
 
 Example prompt:
@@ -48,6 +50,7 @@ Expected behavior: the agent should verify official docs for exact behavior, pre
 - `references/*.md`: focused notes for signing, market data, trading, account endpoints, filters, errors, limits, and Testnet.
 - `scripts/extract_official_section.py`: prints one section from official Binance Spot docs.
 - `scripts/verify_hmac_signature.py`: local HMAC payload self-test and non-secret test helper.
+- `evals/prompts.md`: manual pressure prompts for maintainers.
 
 ## Official Sources
 

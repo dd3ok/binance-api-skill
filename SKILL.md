@@ -7,6 +7,13 @@ description: "Use when implementing/debugging Binance Spot REST /api/* calls: /a
 
 Use this skill for Binance API work centered on Spot REST `/api/*`. For Futures `/fapi`, Delivery `/dapi`, Margin, Wallet `/sapi`, FIX, SBE, or WebSocket APIs, state that this Spot REST workflow does not apply; do not adapt Spot endpoints, filters, or order rules.
 
+## Operating Principles
+
+- Stay inside Spot REST `/api/*`; reject non-Spot scopes instead of adapting Spot patterns.
+- Treat official Binance docs and `GET /api/v3/exchangeInfo` as authoritative; use local references only for routing.
+- Prefer the lowest-risk path that satisfies the task: public/read-only endpoints first, Spot Testnet before live `TRADE`.
+- When exact execution, filters, signing, or rate-limit behavior cannot be verified, disclose uncertainty instead of asserting it.
+
 ## Workflow
 
 1. Start from `references/index.md` and load only the references needed for the task.
