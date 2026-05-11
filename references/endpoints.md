@@ -1,6 +1,6 @@
 # Current Spot REST Endpoints
 
-This is a compact discovery catalog for current Binance Spot REST `/api/v3` endpoints checked against the official raw `rest-api.md` on 2026-05-11. Use it to find the right official heading, then fetch that section for current parameters, weights, security type, data source, and response shape.
+This is a compact discovery snapshot for Binance Spot REST `/api/v3` endpoints checked against the official raw `rest-api.md` on 2026-05-11. It is not source of truth. Use it to find the right official heading, then fetch that section for current parameters, weights, security type, data source, and response shape.
 
 ## General
 

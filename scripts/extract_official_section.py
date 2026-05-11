@@ -7,10 +7,16 @@ import argparse
 import re
 import sys
 import urllib.request
+from urllib.parse import urlparse
 from pathlib import Path
 
 
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*$")
+ALLOWED_URLS = (
+    ("raw.githubusercontent.com", "/binance/binance-spot-api-docs/"),
+    ("github.com", "/binance/binance-spot-api-docs/"),
+    ("developers.binance.com", "/docs/binance-spot-api-docs/"),
+)
 
 
 def normalize(text: str) -> str:
@@ -21,6 +27,11 @@ def normalize(text: str) -> str:
 
 def read_text(source: str) -> str:
     if source.startswith(("http://", "https://")):
+        parsed = urlparse(source)
+        if parsed.scheme != "https":
+            raise ValueError("only https URLs are allowed")
+        if not any(parsed.netloc == host and parsed.path.startswith(path) for host, path in ALLOWED_URLS):
+            raise ValueError("URL must point to official Binance Spot API docs")
         with urllib.request.urlopen(source, timeout=20) as response:
             charset = response.headers.get_content_charset() or "utf-8"
             return response.read().decode(charset)

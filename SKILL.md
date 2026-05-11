@@ -1,6 +1,6 @@
 ---
 name: binance-api-skill
-description: Use when implementing, calling, debugging, or documenting Binance API requests, especially Spot REST /api/* endpoints, including /api/v3 market data, signed account requests, orders, HMAC/RSA/Ed25519 signatures, X-MBX-APIKEY, recvWindow, filters, rate limits, errors, or Testnet.
+description: "Use when implementing/debugging Binance Spot REST /api/* calls: /api/v3 market data, signed account/orders, API keys, HMAC/RSA/Ed25519 signing, recvWindow, filters, rate limits, errors, or Testnet."
 ---
 
 # Binance API
@@ -48,6 +48,15 @@ For exact Markdown sections, use `scripts/extract_official_section.py` against r
 - For `5XX` or `-1007 TIMEOUT` after order operations, do not assume failure. Query order status or use User Data Stream guidance.
 - On `429` or `418`, back off and respect `Retry-After`; repeated violations can trigger IP bans.
 - Use `Decimal` or equivalent fixed-precision math for `PRICE_FILTER`, `LOT_SIZE`, and notional checks.
+
+## Response Checklist
+
+Before final answer, confirm:
+
+- Scope is Spot REST `/api/*`, or non-Spot scope is clearly rejected.
+- Official docs or runtime rules were checked when exact behavior matters, or uncertainty is disclosed.
+- No secrets, live-trade execution, or financial advice are exposed.
+- Endpoint, auth/signing needs, request weight/rate-limit notes, and failure caveats are included when relevant.
 
 ## Example
 
