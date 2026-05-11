@@ -1,6 +1,6 @@
 ---
 name: binance-api-skill
-description: "Use when implementing/debugging Binance Spot REST /api/* calls: /api/v3 market data, signed account/orders, API keys, HMAC/RSA/Ed25519 signing, recvWindow, filters, rate limits, errors, or Testnet."
+description: "Implements/debugs Binance Spot REST /api/* calls: /api/v3 market data, signed account/orders, keys, HMAC/RSA/Ed25519 signing, recvWindow, filters, rate limits, errors, Testnet."
 ---
 
 # Binance API
