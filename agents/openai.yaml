@@ -1,0 +1,4 @@
+interface:
+  display_name: "Binance API Skill"
+  short_description: "Build with Binance REST APIs safely"
+  default_prompt: "Use $binance-api-skill to implement a Binance API call with official docs."
